@@ -1,0 +1,209 @@
+/* Genel Stil */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e6e9f0, #eef1f5);
+  color: #333;
+}
+
+/* Ana Konteyner */
+.wallet-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Kullanıcı Bilgileri */
+.wallet-info {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9fafc;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.wallet-info h1 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.wallet-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* İşlem Geçmişi */
+.transaction-history {
+  padding: 20px;
+  background-color: #f9fafc;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.transaction-history h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Tablo */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #dfe6e9;
+}
+
+/* Input ve Butonlar */
+input[type="number"],
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+  .wallet-container {
+    padding: 15px;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .transaction-container {
+    display: flex;
+    flex-direction: column; /* Kartları dikey hizalama */
+    gap: 10px;
+  }
+
+  .transaction-card {
+    width: 100%; /* Mobilde tüm genişliği kapla */
+    padding: 15px;
+  }
+
+  .transaction-card p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wallet-info h1 {
+    font-size: 20px;
+  }
+
+  .wallet-info p {
+    font-size: 14px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .transaction-card p {
+    font-size: 12px;
+  }
+}
+
+.transaction-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.transaction-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-card p {
+  margin: 5px 0;
+}

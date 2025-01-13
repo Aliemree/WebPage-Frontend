@@ -1,0 +1,101 @@
+.about-us-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 120px auto 0; /* Navbar ile mesafe */
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-item {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-us-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.about-us-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-us-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.no-image {
+  font-size: 1rem;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+}
+
+.created-at {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.loading {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+  .about-us-container {
+    padding: 15px;
+    margin: 100px auto 0; /* Mobilde biraz daha küçük boşluk */
+  }
+
+  .about-us-title {
+    font-size: 1.6rem; /* Başlık boyutunu biraz küçült */
+  }
+
+  .about-us-description {
+    font-size: 1rem; /* Açıklama boyutunu biraz küçült */
+    line-height: 1.4;
+  }
+
+  .about-us-image {
+    margin: 8px 0;
+  }
+
+  .loading {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-us-container {
+    padding: 10px;
+    margin: 80px auto 0; /* Daha küçük cihazlar için uyumlu */
+  }
+
+  .about-us-title {
+    font-size: 1.4rem; /* Daha küçük ekranlar için başlık boyutu */
+  }
+
+  .about-us-description {
+    font-size: 0.9rem; /* Daha küçük açıklama metni */
+  }
+
+  .loading {
+    font-size: 1rem;
+  }
+}

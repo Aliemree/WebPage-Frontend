@@ -1,0 +1,433 @@
+{
+  "data": [
+    {
+      "Name": "Apple",
+      "Symbol": "AAPL",
+      "Price": 150,
+      "Change": 1,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 148, "volume": 10000 },
+        "2025-01-02": { "price": 150, "volume": 12000 }
+      }
+    },
+    {
+      "Name": "Microsoft",
+      "Symbol": "MSFT",
+      "Price": 280,
+      "Change": -1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 282, "volume": 8000 },
+        "2025-01-02": { "price": 280, "volume": 9000 }
+      }
+    },
+    {
+      "Name": "Tesla",
+      "Symbol": "TSLA",
+      "Price": 900,
+      "Change": 2,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 890, "volume": 1200 },
+        "2025-01-02": { "price": 900, "volume": 1500 }
+      }
+    },
+    {
+      "Name": "Ford",
+      "Symbol": "F",
+      "Price": 20,
+      "Change": 3,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 19, "volume": 4000 },
+        "2025-01-02": { "price": 20, "volume": 5000 }
+      }
+    },
+    {
+      "Name": "Google",
+      "Symbol": "GOOGL",
+      "Price": 2800,
+      "Change": 10,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 2790, "volume": 7000 },
+        "2025-01-02": { "price": 2800, "volume": 8000 }
+      }
+    },
+    {
+      "Name": "Amazon",
+      "Symbol": "AMZN",
+      "Price": 3400,
+      "Change": -5,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 3405, "volume": 6000 },
+        "2025-01-02": { "price": 3400, "volume": 6200 }
+      }
+    },
+    {
+      "Name": "Netflix",
+      "Symbol": "NFLX",
+      "Price": 500,
+      "Change": 2,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 490, "volume": 3000 },
+        "2025-01-02": { "price": 500, "volume": 3200 }
+      }
+    },
+    {
+      "Name": "Meta",
+      "Symbol": "META",
+      "Price": 320,
+      "Change": -4,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 324, "volume": 2000 },
+        "2025-01-02": { "price": 320, "volume": 2200 }
+      }
+    },
+    {
+      "Name": "Nvidia",
+      "Symbol": "NVDA",
+      "Price": 780,
+      "Change": 5,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 775, "volume": 8000 },
+        "2025-01-02": { "price": 780, "volume": 8500 }
+      }
+    },
+    {
+      "Name": "Adobe",
+      "Symbol": "ADBE",
+      "Price": 600,
+      "Change": 3,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 597, "volume": 6000 },
+        "2025-01-02": { "price": 600, "volume": 6200 }
+      }
+    },
+    {
+      "Name": "Intel",
+      "Symbol": "INTC",
+      "Price": 30,
+      "Change": -2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 32, "volume": 5000 },
+        "2025-01-02": { "price": 30, "volume": 4800 }
+      }
+    },
+    {
+      "Name": "AMD",
+      "Symbol": "AMD",
+      "Price": 120,
+      "Change": 1,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 119, "volume": 4000 },
+        "2025-01-02": { "price": 120, "volume": 4500 }
+      }
+    },
+    {
+      "Name": "Qualcomm",
+      "Symbol": "QCOM",
+      "Price": 150,
+      "Change": 2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 148, "volume": 5500 },
+        "2025-01-02": { "price": 150, "volume": 5800 }
+      }
+    },
+    {
+      "Name": "Cisco",
+      "Symbol": "CSCO",
+      "Price": 55,
+      "Change": 0,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 55, "volume": 6000 },
+        "2025-01-02": { "price": 55, "volume": 6200 }
+      }
+    },
+    {
+      "Name": "IBM",
+      "Symbol": "IBM",
+      "Price": 130,
+      "Change": -1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 131, "volume": 7000 },
+        "2025-01-02": { "price": 130, "volume": 7500 }
+      }
+    },
+    {
+      "Name": "Shopify",
+      "Symbol": "SHOP",
+      "Price": 800,
+      "Change": 4,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 796, "volume": 3000 },
+        "2025-01-02": { "price": 800, "volume": 3200 }
+      }
+    },
+    {
+      "Name": "Zoom",
+      "Symbol": "ZM",
+      "Price": 100,
+      "Change": 2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 98, "volume": 2500 },
+        "2025-01-02": { "price": 100, "volume": 2700 }
+      }
+    },
+    {
+      "Name": "Salesforce",
+      "Symbol": "CRM",
+      "Price": 200,
+      "Change": -3,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 203, "volume": 4500 },
+        "2025-01-02": { "price": 200, "volume": 4700 }
+      }
+    },
+    {
+      "Name": "Square",
+      "Symbol": "SQ",
+      "Price": 250,
+      "Change": 2,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 248, "volume": 3200 },
+        "2025-01-02": { "price": 250, "volume": 3500 }
+      }
+    },
+    {
+      "Name": "Twitter",
+      "Symbol": "TWTR",
+      "Price": 70,
+      "Change": -1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 71, "volume": 3400 },
+        "2025-01-02": { "price": 70, "volume": 3600 }
+      }
+    },
+    {
+      "Name": "Uber",
+      "Symbol": "UBER",
+      "Price": 45,
+      "Change": 0,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 45, "volume": 5000 },
+        "2025-01-02": { "price": 45, "volume": 5200 }
+      }
+    },
+    {
+      "Name": "Lyft",
+      "Symbol": "LYFT",
+      "Price": 30,
+      "Change": -2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 32, "volume": 2200 },
+        "2025-01-02": { "price": 30, "volume": 2400 }
+      }
+    },
+    {
+      "Name": "Spotify",
+      "Symbol": "SPOT",
+      "Price": 240,
+      "Change": 4,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 236, "volume": 1800 },
+        "2025-01-02": { "price": 240, "volume": 2000 }
+      }
+    },
+    {
+      "Name": "Snap",
+      "Symbol": "SNAP",
+      "Price": 20,
+      "Change": 1,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 19, "volume": 8000 },
+        "2025-01-02": { "price": 20, "volume": 8500 }
+      }
+    },
+    {
+      "Name": "Pinterest",
+      "Symbol": "PINS",
+      "Price": 25,
+      "Change": -1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 26, "volume": 4000 },
+        "2025-01-02": { "price": 25, "volume": 4200 }
+      }
+    },
+    {
+      "Name": "Alibaba",
+      "Symbol": "BABA",
+      "Price": 120,
+      "Change": -5,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 125, "volume": 10000 },
+        "2025-01-02": { "price": 120, "volume": 10500 }
+      }
+    },
+    {
+      "Name": "JD.com",
+      "Symbol": "JD",
+      "Price": 80,
+      "Change": 2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 78, "volume": 6000 },
+        "2025-01-02": { "price": 80, "volume": 6500 }
+      }
+    },
+    {
+      "Name": "Baidu",
+      "Symbol": "BIDU",
+      "Price": 150,
+      "Change": 3,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 147, "volume": 5000 },
+        "2025-01-02": { "price": 150, "volume": 5200 }
+      }
+    },
+    {
+      "Name": "Roku",
+      "Symbol": "ROKU",
+      "Price": 250,
+      "Change": -4,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 254, "volume": 2800 },
+        "2025-01-02": { "price": 250, "volume": 3000 }
+      }
+    },
+    {
+      "Name": "Disney",
+      "Symbol": "DIS",
+      "Price": 180,
+      "Change": 5,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 175, "volume": 15000 },
+        "2025-01-02": { "price": 180, "volume": 16000 }
+      }
+    },
+    {
+      "Name": "Peloton",
+      "Symbol": "PTON",
+      "Price": 30,
+      "Change": -1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 31, "volume": 2500 },
+        "2025-01-02": { "price": 30, "volume": 2600 }
+      }
+    },
+    {
+      "Name": "ZoomInfo",
+      "Symbol": "ZI",
+      "Price": 70,
+      "Change": 1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 69, "volume": 8000 },
+        "2025-01-02": { "price": 70, "volume": 8500 }
+      }
+    },
+    {
+      "Name": "Coca-Cola",
+      "Symbol": "KO",
+      "Price": 60,
+      "Change": 2,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 58, "volume": 14000 },
+        "2025-01-02": { "price": 60, "volume": 15000 }
+      }
+    },
+    {
+      "Name": "PepsiCo",
+      "Symbol": "PEP",
+      "Price": 150,
+      "Change": 3,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 147, "volume": 8000 },
+        "2025-01-02": { "price": 150, "volume": 8500 }
+      }
+    },
+    {
+      "Name": "Procter & Gamble",
+      "Symbol": "PG",
+      "Price": 140,
+      "Change": -2,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 142, "volume": 9000 },
+        "2025-01-02": { "price": 140, "volume": 9200 }
+      }
+    },
+    {
+      "Name": "Johnson & Johnson",
+      "Symbol": "JNJ",
+      "Price": 170,
+      "Change": 1,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 169, "volume": 10000 },
+        "2025-01-02": { "price": 170, "volume": 10500 }
+      }
+    },
+    {
+      "Name": "Pfizer",
+      "Symbol": "PFE",
+      "Price": 50,
+      "Change": 0,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 50, "volume": 18000 },
+        "2025-01-02": { "price": 50, "volume": 18500 }
+      }
+    },
+    {
+      "Name": "Moderna",
+      "Symbol": "MRNA",
+      "Price": 200,
+      "Change": 5,
+      "isPopular": true,
+      "HistoricalData": {
+        "2025-01-01": { "price": 195, "volume": 12000 },
+        "2025-01-02": { "price": 200, "volume": 12500 }
+      }
+    },
+    {
+      "Name": "Novavax",
+      "Symbol": "NVAX",
+      "Price": 150,
+      "Change": -3,
+      "isPopular": false,
+      "HistoricalData": {
+        "2025-01-01": { "price": 153, "volume": 6000 },
+        "2025-01-02": { "price": 150, "volume": 6200 }
+      }
+    }
+  ]
+}

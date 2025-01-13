@@ -1,0 +1,170 @@
+/* Ana Konteyner */
+.stocks-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 140px auto 30px; /* Navbar altına daha fazla boşluk */
+    background: linear-gradient(135deg, #f4f4f4, #ffffff); /* Daha yumuşak bir degrade arka plan */
+    border-radius: 12px; /* Hafif yuvarlak köşeler */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+/* Başlıklar */
+.stocks-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Büyük harf */
+    margin-bottom: 10px;
+    letter-spacing: 2px; /* Harf aralığı */
+}
+
+.stocks-container h2 {
+    text-align: center;
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Grid Konteyner */
+.stocks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Varsayılan sütun sayısı */
+    gap: 15px; /* Kartlar arasındaki boşluk */
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Kart Tasarımı */
+.stock-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stock-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Kart İçeriği */
+.stock-card h3 {
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stock-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.stock-card p.is-popular {
+    color: #007500;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Tarih Verisi */
+.historical-data {
+    margin-top: 12px;
+    text-align: left;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.historical-data span {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .stocks-grid {
+        grid-template-columns: repeat(3, 1fr); /* Orta ekranlar için 3 sütun */
+    }
+}
+
+@media (max-width: 768px) {
+    .stocks-grid {
+        grid-template-columns: repeat(2, 1fr); /* Küçük ekranlar için 2 sütun */
+    }
+
+    .stocks-container {
+        padding: 15px; /* Mobilde daha kompakt padding */
+    }
+
+    .stocks-container h1 {
+        font-size: 2rem; /* Başlık boyutunu küçültme */
+    }
+
+    .stocks-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .stock-card {
+        padding: 15px;
+    }
+
+    .stock-card h3 {
+        font-size: 16px;
+    }
+
+    .stock-card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stocks-grid {
+        grid-template-columns: repeat(1, 1fr); /* Mobil cihazlar için tek sütun */
+    }
+
+    .stocks-container {
+        padding: 10px;
+        margin: 100px auto 20px; /* Navbar ile uyum için boşluk düzenlemesi */
+    }
+
+    .stocks-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .stocks-container h2 {
+        font-size: 1rem;
+    }
+
+    .stock-card {
+        padding: 10px;
+    }
+
+    .stock-card h3 {
+        font-size: 14px;
+    }
+
+    .stock-card p {
+        font-size: 12px;
+    }
+}
+
+/* Scrollbar Tasarımı */
+.stocks-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.stocks-container::-webkit-scrollbar-thumb {
+    background: #7a5fc0;
+    border-radius: 4px;
+}
+
+.stocks-container::-webkit-scrollbar-thumb:hover {
+    background: #6b50b2;
+}
