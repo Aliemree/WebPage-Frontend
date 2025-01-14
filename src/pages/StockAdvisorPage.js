@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./StockAdvisorPage.css";
 
+const API = process.env.REACT_APP_API_URL;
+
 const StockAdvisorPage = () => {
   const [investmentTips, setInvestmentTips] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ const StockAdvisorPage = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:1337/api/investment-tips",
+        `${API}/api/investment-tips`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./StocksPage.css";
 
+
+const API = process.env.REACT_APP_API_URL;
+
 const StocksPage = () => {
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +16,7 @@ const StocksPage = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:1337/api/stocks", {
+        const response = await axios.get(`${API}/api/stocks`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

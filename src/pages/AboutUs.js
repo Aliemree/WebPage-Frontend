@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AboutUs.css'; // CSS dosyasını import ediyoruz
 
+const API = process.env.REACT_APP_API_URL;
+
 const AboutUs = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    
     axios
-      .get('http://localhost:1337/api/about-uses?populate=*') // API'yi çağırıyoruz
+      .get(`${API}/api/about-uses?populate=*`) // API'yi çağırıyoruz
       .then((response) => {
         setData(response.data.data || []); // Gelen veriyi kontrol edip state'e set ediyoruz
       })
@@ -46,7 +49,7 @@ const AboutUs = () => {
           {/* Görsel Gösterimi */}
           {item.Image?.data && item.Image.data.length > 0 ? (
             <img
-              src={`http://localhost:1337${item.Image.data[0].attributes.url}`}
+              src={`${API}${item.Image.data[0].attributes.url}`}
               alt={item.Title || 'Görsel'}
               className="about-us-image"
             />

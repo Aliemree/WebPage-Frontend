@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./WalletPage.css";
 
+
+const API = process.env.REACT_APP_API_URL;
+
+
 const WalletPage = () => {
   const [wallet, setWallet] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -27,7 +31,7 @@ const WalletPage = () => {
       const token = localStorage.getItem("token");
 
       const walletResponse = await axios.get(
-        `http://localhost:1337/api/wallets/${DOCUMENT_ID}?populate=users_permissions_user`,
+        `${API}/api/wallets/${DOCUMENT_ID}?populate=users_permissions_user`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -61,7 +65,7 @@ const WalletPage = () => {
 
       // Transactions çekiliyor
       const transactionsResponse = await axios.get(
-        "http://localhost:1337/api/transactions?populate=stocks",
+        `${API}/api/transactions?populate=stocks`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -71,7 +75,7 @@ const WalletPage = () => {
 
       // Stocks çekiliyor
       const stocksResponse = await axios.get(
-        "http://localhost:1337/api/stocks",
+        `${API}/api/stocks`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -115,7 +119,7 @@ const WalletPage = () => {
 
       // Kredi kartı verilerini kaydet
       await axios.post(
-        "http://localhost:1337/api/cards",
+        `${API}/api/cards`,
         {
           data: {
             CardNumber: cardNumber,
@@ -134,7 +138,7 @@ const WalletPage = () => {
 
       // Cüzdan bakiyesini güncelle
       await axios.put(
-        `http://localhost:1337/api/wallets/${DOCUMENT_ID}`,
+        `${API}/api/wallets/${DOCUMENT_ID}`,
         { data: { balance: Number(wallet.balance) + Number(balanceInput) } },
         {
           headers: {

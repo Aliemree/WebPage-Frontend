@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./RegisterPage.css"; // Import the CSS file
 
+const API = process.env.REACT_APP_API_URL;
+
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -12,7 +14,7 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:1337/api/auth/local/register", {
+      await axios.post(`${API}/api/auth/local/register`, {
         username,
         email,
         password,

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./HomePage.css";
 
+const API = process.env.REACT_APP_API_URL;
+
 const HomePage = () => {
   const [stocks, setStocks] = useState([]);
   const [wallet, setWallet] = useState(null);
@@ -20,14 +22,14 @@ const HomePage = () => {
 
       // Hisse senetlerini GET
       const stockResponse = await axios.get(
-        "http://localhost:1337/api/stocks",
+        `${API}/api/stocks`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setStocks(stockResponse.data.data || []);
 
       // Cüzdanı GET /wallets/:documentId
       const walletResponse = await axios.get(
-        `http://localhost:1337/api/wallets/${DOCUMENT_ID}`,
+        `${API}/api/wallets/${DOCUMENT_ID}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -98,7 +100,7 @@ const HomePage = () => {
     try {
       // 1) PUT /wallets/:documentId -> Bakiyeyi güncelle
       await axios.put(
-        `http://localhost:1337/api/wallets/${DOCUMENT_ID}`,
+        `${API}/api/wallets/${DOCUMENT_ID}`,
         { data: { balance: updatedBalance } },
         {
           headers: {
@@ -110,7 +112,7 @@ const HomePage = () => {
 
       // 2) POST /transactions -> İşlem kaydı ekle
       await axios.post(
-        "http://localhost:1337/api/transactions",
+        `${API}/api/transactions`,
         postData,
         {
           headers: {
