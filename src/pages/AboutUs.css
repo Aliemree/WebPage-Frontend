@@ -1,7 +1,7 @@
 .about-us-container {
   padding: 20px;
   max-width: 800px;
-  margin: 120px auto 0; /* Navbar ile mesafe */
+  margin: 120px auto 0;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -56,19 +56,18 @@
   color: #666;
 }
 
-/* Responsive Tasarım */
 @media screen and (max-width: 768px) {
   .about-us-container {
     padding: 15px;
-    margin: 100px auto 0; /* Mobilde biraz daha küçük boşluk */
+    margin: 100px auto 0;
   }
 
   .about-us-title {
-    font-size: 1.6rem; /* Başlık boyutunu biraz küçült */
+    font-size: 1.6rem;
   }
 
   .about-us-description {
-    font-size: 1rem; /* Açıklama boyutunu biraz küçült */
+    font-size: 1rem;
     line-height: 1.4;
   }
 
@@ -84,18 +83,19 @@
 @media screen and (max-width: 480px) {
   .about-us-container {
     padding: 10px;
-    margin: 80px auto 0; /* Daha küçük cihazlar için uyumlu */
+    margin: 80px auto 0;
   }
 
   .about-us-title {
-    font-size: 1.4rem; /* Daha küçük ekranlar için başlık boyutu */
+    font-size: 1.4rem;
   }
 
   .about-us-description {
-    font-size: 0.9rem; /* Daha küçük açıklama metni */
+    font-size: 0.9rem;
   }
 
   .loading {
     font-size: 1rem;
   }
 }
+

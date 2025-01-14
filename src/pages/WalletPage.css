@@ -5,205 +5,175 @@ body {
   padding: 0;
   background: linear-gradient(to right, #e6e9f0, #eef1f5);
   color: #333;
+  padding-top: 100px;
 }
 
 /* Ana Konteyner */
 .wallet-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  max-width: 50000px;
+  margin: 80px auto 2rem auto;
+  padding: 20px 1.5rem;
+  display: flex;
+  gap: 2rem; /* İki kutu arasındaki boşluk */
+  position: relative;
+  z-index: 1;
 }
 
-/* Kullanıcı Bilgileri */
-.wallet-info {
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #f9fafc;
-  border-radius: 10px;
-  border: 1px solid #e6e6e6;
+/* Sol Taraf - Bakiye Güncelleme */
+.wallet-left {
+  flex: 1;
+  min-width: 800px;
 }
 
-.wallet-info h1 {
-  margin: 0 0 10px;
-  font-size: 24px;
+/* Sağ Taraf - İşlem Geçmişi */
+.wallet-right {
+  flex: 1;
+  min-width: 500px;
+}
+
+/* Kullanıcı Bilgisi ve Bakiye */
+.user-info {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.user-info h1 {
   color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.wallet-info p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #7f8c8d;
+.current-balance {
+  font-size: 2rem;
+  color: #7a5fc0;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Bakiye Güncelleme Formu */
+.balance-update {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.balance-update h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.balance-update label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.balance-update input {
+  width: 95%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.balance-update button {
+  width: 100%;
+  padding: 1rem;
+  background: #7a5fc0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.balance-update button:hover {
+  background: #6b50b2;
+}
+
+/* Kredi Kartı Bilgileri */
+.card-info {
+  margin-top: 1.5rem;
+}
+
+.card-info h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.1rem;
 }
 
 /* İşlem Geçmişi */
-.transaction-history {
-  padding: 20px;
-  background-color: #f9fafc;
-  border-radius: 10px;
-  border: 1px solid #e6e6e6;
-}
-
-.transaction-history h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #2c3e50;
-}
-
-/* Tablo */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table th,
-table td {
-  border: 1px solid #e6e6e6;
-  padding: 12px;
-  text-align: left;
-}
-
-table th {
-  background-color: #ecf0f1;
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-table tr:hover {
-  background-color: #dfe6e9;
-}
-
-/* Input ve Butonlar */
-input[type="number"],
-input[type="text"] {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #2c3e50;
-}
-
-input[type="number"]:focus,
-input[type="text"]:focus {
-  border-color: #3498db;
-  outline: none;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
-
-button {
-  display: inline-block;
-  padding: 12px 20px;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background-color: #3498db;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-button:disabled {
-  background-color: #bdc3c7;
-  cursor: not-allowed;
-}
-
-/* Responsive Tasarım */
-@media screen and (max-width: 768px) {
-  .wallet-container {
-    padding: 15px;
-  }
-
-  table th,
-  table td {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  input[type="number"],
-  input[type="text"] {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-
-  .transaction-container {
-    display: flex;
-    flex-direction: column; /* Kartları dikey hizalama */
-    gap: 10px;
-  }
-
-  .transaction-card {
-    width: 100%; /* Mobilde tüm genişliği kapla */
-    padding: 15px;
-  }
-
-  .transaction-card p {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .wallet-info h1 {
-    font-size: 20px;
-  }
-
-  .wallet-info p {
-    font-size: 14px;
-  }
-
-  table th,
-  table td {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  input[type="number"],
-  input[type="text"] {
-    font-size: 12px;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .transaction-card p {
-    font-size: 12px;
-  }
-}
-
 .transaction-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-container h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .transaction-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  width: 150px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  border-left: 4px solid #7a5fc0;
+}
+
+.transaction-card:hover {
+  transform: translateX(5px);
 }
 
 .transaction-card p {
-  margin: 5px 0;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.transaction-card strong {
+  color: #2c3e50;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .wallet-container {
+    margin-top: 100px;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .wallet-left,
+  .wallet-right {
+    min-width: 100%;
+  }
+
+  .current-balance {
+    font-size: 1.8rem;
+  }
+
+  .transaction-card {
+    padding: 1rem;
+  }
 }

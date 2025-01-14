@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AboutUs.css'; // CSS dosyasını import ediyoruz
+import './AboutUs.css'; 
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -10,17 +10,17 @@ const AboutUs = () => {
   useEffect(() => {
     
     axios
-      .get(`${API}/api/about-uses?populate=*`) // API'yi çağırıyoruz
+      .get(`${API}/api/about-uses?populate=*`) 
       .then((response) => {
-        setData(response.data.data || []); // Gelen veriyi kontrol edip state'e set ediyoruz
+        setData(response.data.data || []); 
       })
       .catch((error) => {
-        console.error('Error fetching About Us data:', error); // Hataları konsola yazdırıyoruz
+        console.error('Error fetching About Us data:', error); 
       });
   }, []);
 
   if (!data || data.length === 0) {
-    return <div className="loading">Hiçbir veri bulunamadı.</div>; // Eğer veri yoksa
+    return <div className="loading">Hiçbir veri bulunamadı.</div>; 
   }
 
   return (
@@ -45,18 +45,6 @@ const AboutUs = () => {
                 ))
               : 'Açıklama Eklenmemiş.'}
           </div>
-
-          {/* Görsel Gösterimi */}
-          {item.Image?.data && item.Image.data.length > 0 ? (
-            <img
-              src={`${API}${item.Image.data[0].attributes.url}`}
-              alt={item.Title || 'Görsel'}
-              className="about-us-image"
-            />
-          ) : (
-            <p className="no-image">Resim Bulunamadı.</p>
-          )}
-
           {/* Oluşturulma Tarihi */}
           <p className="created-at">Oluşturulma Tarihi: {item.createdAt}</p>
         </div>

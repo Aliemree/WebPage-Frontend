@@ -1,22 +1,23 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const location = useLocation(); // Aktif sayfayı kontrol etmek için
-
-  // Check if the user is logged in
+  const location = useLocation();
   const isLoggedIn = !!localStorage.getItem("token");
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Clear the token
-    navigate("/login"); // Redirect to login page
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
-        <div style={styles.logo}>FinancAli</div>
+        <Link to="/" style={styles.logo}>
+          FinancAli
+        </Link>
         <div style={styles.navLinks}>
           {isLoggedIn ? (
             <>
@@ -42,9 +43,7 @@ const Navbar = () => {
                 to="/about-us"
                 style={{
                   ...styles.link,
-                  ...(location.pathname === "/about-us"
-                    ? styles.activeLink
-                    : {}),
+                  ...(location.pathname === "/about-us" ? styles.activeLink : {}),
                 }}
               >
                 About Us
@@ -62,9 +61,7 @@ const Navbar = () => {
                 to="/stock-advisor"
                 style={{
                   ...styles.link,
-                  ...(location.pathname === "/stock-advisor"
-                    ? styles.activeLink
-                    : {}),
+                  ...(location.pathname === "/stock-advisor" ? styles.activeLink : {}),
                 }}
               >
                 Stock Advisor
@@ -88,9 +85,7 @@ const Navbar = () => {
                 to="/register"
                 style={{
                   ...styles.link,
-                  ...(location.pathname === "/register"
-                    ? styles.activeLink
-                    : {}),
+                  ...(location.pathname === "/register" ? styles.activeLink : {}),
                 }}
               >
                 Register
@@ -106,7 +101,7 @@ const Navbar = () => {
 const styles = {
   navbar: {
     width: "100%",
-    padding: "px 20px",
+    padding: "15px 20px",
     backgroundColor: "#ffffff",
     borderBottom: "1px solid #ddd",
     display: "flex",
@@ -127,7 +122,7 @@ const styles = {
     alignItems: "center",
   },
   logo: {
-    fontSize: "20px",
+    fontSize: "24px",
     fontWeight: "bold",
     color: "#7a5fc0",
     textDecoration: "none",
@@ -144,19 +139,21 @@ const styles = {
     fontSize: "16px",
     fontWeight: "500",
     transition: "color 0.3s ease",
+    padding: "8px 12px",
+    borderRadius: "4px",
   },
   activeLink: {
     color: "#7a5fc0",
     fontWeight: "bold",
-    textDecoration: "underline",
+    backgroundColor: "rgba(122, 95, 192, 0.1)",
   },
   button: {
     backgroundColor: "#7a5fc0",
     color: "white",
     border: "none",
     borderRadius: "5px",
-    padding: "8px 16px",
-    fontSize: "14px",
+    padding: "10px 20px",
+    fontSize: "16px",
     cursor: "pointer",
     transition: "background-color 0.3s ease",
   },

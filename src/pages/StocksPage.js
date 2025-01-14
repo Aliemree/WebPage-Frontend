@@ -9,8 +9,8 @@ const StocksPage = () => {
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // Şu anki sayfa
-  const stocksPerPage = 15; // Her sayfada gösterilecek veri sayısı
+  const [currentPage, setCurrentPage] = useState(1);
+  const stocksPerPage = 15; 
 
   useEffect(() => {
     const fetchData = async () => {

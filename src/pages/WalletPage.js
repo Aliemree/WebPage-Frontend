@@ -18,7 +18,7 @@ const WalletPage = () => {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
 
-  const DOCUMENT_ID = "y8069ijv9ptnvmwe89pl7ikr";
+  const DOCUMENT_ID = "dqbahymad5r5wsynalii8acw";
 
   useEffect(() => {
     fetchWalletWithUser();
@@ -170,75 +170,79 @@ const WalletPage = () => {
 
   return (
     <div className="wallet-container">
-      {wallet ? (
-        <div>
+      {/* Sol Taraf */}
+      <div className="wallet-left">
+        <div className="user-info">
           <h1>Kullanıcı: {userName}</h1>
-          <p>Current Balance: ${wallet.balance}</p>
-
-          <div className="wallet-content">
-            <div className="balance-update">
-              <label htmlFor="balanceInput">Kartınızdan Eklenecek Bakiye: </label>
-              <input
-                id="balanceInput"
-                type="number"
-                onChange={(e) => setBalanceInput(e.target.value)}
-              />
-              <button onClick={handleBalanceUpdateWithCard}>
-                Kart ile Bakiye Güncelle
-              </button>
-            </div>
-
-            <div className="card-info">
-              <h3>Kredi Kartı Bilgileri</h3>
-              <label htmlFor="cardNumber">Kart Numarası:</label>
-              <input
-                id="cardNumber"
-                type="text"
-                value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
-                placeholder="1234 5678 1234 5678"
-              />
-
-              <label htmlFor="expiryDate">Son Kullanma Tarihi:</label>
-              <input
-                id="expiryDate"
-                type="text"
-                value={expiryDate}
-                onChange={(e) => setExpiryDate(e.target.value)}
-                placeholder="MM/YY"
-              />
-
-              <label htmlFor="cvv">CVV:</label>
-              <input
-                id="cvv"
-                type="text"
-                value={cvv}
-                onChange={(e) => setCvv(e.target.value)}
-                placeholder="123"
-              />
-            </div>
-          </div>
-
-          <h3>İşlem Geçmişi</h3>
-          <div className="transaction-container">
-            {transactionDetails.length > 0 ? (
-              transactionDetails.map((detail, index) => (
-                <div className="transaction-card" key={index}>
-                  <p><strong>Hisse:</strong> {detail.stockName}</p>
-                  <p><strong>Fiyat:</strong> ${detail.stockPrice}</p>
-                  <p><strong>İşlem Türü:</strong> {detail.transactionType}</p>
-                  <p><strong>Toplam Fiyat:</strong> ${detail.totalPrice}</p>
-                  <p><strong>Tarih:</strong> {detail.transactionDate}</p>
-                </div>
-              ))
-            ) : (
-              <p>İşlem geçmişi bulunmamaktadır.</p>
-            )}
+          <div className="current-balance">
+            ${wallet.balance}
           </div>
         </div>
-      ) : (
-        <p>Wallet bulunamadı.</p>
-      )}
+
+        <div className="balance-update">
+          <h2>Bakiye Güncelleme</h2>
+          <label htmlFor="balanceInput">Kartınızdan Eklenecek Bakiye: </label>
+          <input
+            id="balanceInput"
+            type="number"
+            onChange={(e) => setBalanceInput(e.target.value)}
+          />
+          
+          <div className="card-info">
+            <h3>Kredi Kartı Bilgileri</h3>
+            <label htmlFor="cardNumber">Kart Numarası:</label>
+            <input
+              id="cardNumber"
+              type="text"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+              placeholder="1234 5678 1234 5678"
+            />
+
+            <label htmlFor="expiryDate">Son Kullanma Tarihi:</label>
+            <input
+              id="expiryDate"
+              type="text"
+              value={expiryDate}
+              onChange={(e) => setExpiryDate(e.target.value)}
+              placeholder="MM/YY"
+            />
+
+            <label htmlFor="cvv">CVV:</label>
+            <input
+              id="cvv"
+              type="text"
+              value={cvv}
+              onChange={(e) => setCvv(e.target.value)}
+              placeholder="123"
+            />
+          </div>
+
+          <button onClick={handleBalanceUpdateWithCard}>
+            Kart ile Bakiye Güncelle
+          </button>
+        </div>
+      </div>
+
+      {/* Sağ Taraf */}
+      <div className="wallet-right">
+        <div className="transaction-container">
+          <h2>İşlem Geçmişi</h2>
+          {transactionDetails.length > 0 ? (
+            transactionDetails.map((detail, index) => (
+              <div className="transaction-card" key={index}>
+                <p><strong>Hisse:</strong> {detail.stockName}</p>
+                <p><strong>Fiyat:</strong> ${detail.stockPrice}</p>
+                <p><strong>İşlem Türü:</strong> {detail.transactionType}</p>
+                <p><strong>Toplam Fiyat:</strong> ${detail.totalPrice}</p>
+                <p><strong>Tarih:</strong> {detail.transactionDate}</p>
+              </div>
+            ))
+          ) : (
+            <p>İşlem geçmişi bulunmamaktadır.</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

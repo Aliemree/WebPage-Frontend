@@ -14,9 +14,9 @@
     color: #333;
     font-size: 2.5rem;
     font-weight: bold;
-    text-transform: uppercase; /* Büyük harf */
+    text-transform: uppercase; 
     margin-bottom: 10px;
-    letter-spacing: 2px; /* Harf aralığı */
+    letter-spacing: 2px; 
 }
 
 .stocks-container h2 {
@@ -30,8 +30,8 @@
 /* Grid Konteyner */
 .stocks-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Varsayılan sütun sayısı */
-    gap: 15px; /* Kartlar arasındaki boşluk */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px; 
     justify-content: center;
     padding: 20px 0;
 }
@@ -89,49 +89,39 @@
 
 /* Responsive Tasarım */
 @media (max-width: 1024px) {
+    .stocks-container {
+        padding: 15px;
+        margin-top: 70px;
+    }
+
     .stocks-grid {
-        grid-template-columns: repeat(3, 1fr); /* Orta ekranlar için 3 sütun */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .stocks-grid {
-        grid-template-columns: repeat(2, 1fr); /* Küçük ekranlar için 2 sütun */
-    }
-
     .stocks-container {
-        padding: 15px; /* Mobilde daha kompakt padding */
+        margin-top: 60px;
     }
 
-    .stocks-container h1 {
-        font-size: 2rem; /* Başlık boyutunu küçültme */
-    }
-
-    .stocks-container h2 {
-        font-size: 1.2rem;
+    .stocks-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .stock-card {
         padding: 15px;
     }
-
-    .stock-card h3 {
-        font-size: 16px;
-    }
-
-    .stock-card p {
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 480px) {
     .stocks-grid {
-        grid-template-columns: repeat(1, 1fr); /* Mobil cihazlar için tek sütun */
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .stocks-container {
         padding: 10px;
-        margin: 100px auto 20px; /* Navbar ile uyum için boşluk düzenlemesi */
+        margin: 100px auto 20px; 
     }
 
     .stocks-container h1 {

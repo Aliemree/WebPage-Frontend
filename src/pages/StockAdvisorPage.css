@@ -3,16 +3,16 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #eef2f3, #8e9eab);
   margin: 0;
-  padding: 0;
+  padding: 111111;
 }
 
 /* Stock Advisor Container */
 .stock-advisor-container {
-  max-width: 1000px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 30px 10px 10px 10px;
   padding: 20px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -21,7 +21,7 @@ body {
 .stock-advisor-container h1 {
   text-align: center;
   color: #333;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -29,8 +29,8 @@ body {
 .stock-advisor-container p {
   text-align: center;
   color: #555;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 /* Tips Container */

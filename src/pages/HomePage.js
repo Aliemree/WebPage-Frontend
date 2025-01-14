@@ -9,8 +9,9 @@ const HomePage = () => {
   const [wallet, setWallet] = useState(null);
   const [selectedStock, setSelectedStock] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [quantity, setQuantity] = useState(1);
 
-  const DOCUMENT_ID = "y8069ijv9ptnvmwe89pl7ikr";
+  const DOCUMENT_ID = "dqbahymad5r5wsynalii8acw";
 
   useEffect(() => {
     fetchData();
@@ -53,13 +54,11 @@ const HomePage = () => {
     }
 
     const token = localStorage.getItem("token");
-    const quantity = 1; // İşlem miktarı
     const totalPrice = selectedStock.Price * quantity;
 
     let updatedBalance;
     let postData;
 
-    // İşlem türüne göre farklı bakiye hesaplama ve postData oluşturma
     if (type === "buy") {
       if (wallet.balance < totalPrice) {
         alert("Yetersiz bakiye.Lütfen bakiyenizi kontrol edin.Wallet Ekranında Kartınızla İşlem Yapabilirsiniz.");
@@ -69,7 +68,7 @@ const HomePage = () => {
 
       postData = {
         data: {
-          Type: "buy ", // "buy" işlem tipi (sonunda boşluk var)
+          Type: "buy ",
           TotalPrice: totalPrice,
           Quantity: quantity,
           user: wallet.users_permissions_user?.id || 7,
@@ -83,7 +82,7 @@ const HomePage = () => {
 
       postData = {
         data: {
-          Type: "sell", // "sell" işlem tipi
+          Type: "sell",
           TotalPrice: totalPrice,
           Quantity: quantity,
           user: wallet.users_permissions_user?.id || 7,
@@ -92,13 +91,9 @@ const HomePage = () => {
           locale: "en",
         },
       };
-    } else {
-      alert("Geçersiz işlem türü!");
-      return;
     }
 
     try {
-      // 1) PUT /wallets/:documentId -> Bakiyeyi güncelle
       await axios.put(
         `${API}/api/wallets/${DOCUMENT_ID}`,
         { data: { balance: updatedBalance } },
@@ -110,7 +105,6 @@ const HomePage = () => {
         }
       );
 
-      // 2) POST /transactions -> İşlem kaydı ekle
       await axios.post(
         `${API}/api/transactions`,
         postData,
@@ -122,25 +116,18 @@ const HomePage = () => {
         }
       );
 
-      // Lokal state güncelle
       setWallet({ ...wallet, balance: updatedBalance });
 
       alert(
-        `${
-          type === "buy" ? "Satın alındı" : "Satıldı"
-        }: ${quantity} adet ${selectedStock.Name} için $${totalPrice}`
+        `${type === "buy" ? "Satın alındı" : "Satıldı"}: ${quantity} adet ${selectedStock.Name} için $${totalPrice}`
       );
     } catch (error) {
       console.error(
-        `${
-          type === "buy" ? "Satın alma" : "Satış"
-        } işlemi sırasında hata oluştu:`,
+        `${type === "buy" ? "Satın alma" : "Satış"} işlemi sırasında hata oluştu:`,
         error.response?.data || error
       );
       alert(
-        `${
-          type === "buy" ? "Satın alma" : "Satış"
-        } işlemi başarısız oldu. Konsolu kontrol edin.`
+        `${type === "buy" ? "Satın alma" : "Satış"} işlemi başarısız oldu. Konsolu kontrol edin.`
       );
     }
   };
@@ -156,9 +143,7 @@ const HomePage = () => {
         {stocks.map((stock) => (
           <div
             key={stock.id}
-            className={`stock-item ${
-              selectedStock?.id === stock.id ? "active" : ""
-            }`}
+            className={`stock-item ${selectedStock?.id === stock.id ? "active" : ""}`}
             onClick={() => setSelectedStock(stock)}
           >
             <p className="stock-name">{stock.Name}</p>
@@ -180,17 +165,40 @@ const HomePage = () => {
             <p>
               <strong>Değişim:</strong> {selectedStock.Change}%
             </p>
+
+            <div className="quantity-selector">
+              <label htmlFor="quantity">İşlem Adedi:</label>
+              <div className="quantity-controls">
+                <button 
+                  className="quantity-btn"
+                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="quantity"
+                  min="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                />
+                <button 
+                  className="quantity-btn"
+                  onClick={() => setQuantity(prev => prev + 1)}
+                >
+                  +
+                </button>
+              </div>
+              <p className="total-price">
+                <strong>Toplam Tutar:</strong> ${(selectedStock.Price * quantity).toFixed(2)}
+              </p>
+            </div>
+
             <div className="actions">
-              <button
-                className="buy-btn"
-                onClick={() => handleTransaction("buy")}
-              >
+              <button className="buy-btn" onClick={() => handleTransaction("buy")}>
                 Satın Al
               </button>
-              <button
-                className="sell-btn"
-                onClick={() => handleTransaction("sell")}
-              >
+              <button className="sell-btn" onClick={() => handleTransaction("sell")}>
                 Sat
               </button>
             </div>

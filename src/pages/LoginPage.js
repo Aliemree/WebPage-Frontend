@@ -17,8 +17,8 @@ const LoginPage = () => {
         identifier: email,
         password: password,
       });
-      localStorage.setItem("token", response.data.jwt); // Token saklanıyor
-      navigate("/"); // Başarılı girişten sonra ana sayfaya yönlendirme
+      localStorage.setItem("token", response.data.jwt);
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error);
       alert("Invalid credentials! Please try again.");

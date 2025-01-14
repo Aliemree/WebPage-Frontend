@@ -120,3 +120,100 @@ body {
     margin-right: 8px;
   }
 }
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  padding: 1rem;
+}
+
+.login-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #2980b9;
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+        margin-top: 60px;
+    }
+
+    .login-form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-group input {
+        padding: 12px;
+        font-size: 16px; /* Mobilde daha rahat tıklama için */
+    }
+
+    .login-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+}
